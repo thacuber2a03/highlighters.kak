@@ -1,6 +1,6 @@
-[submodule "umka.kak"]
-	path = umka.kak
-	url = https://github.com/thacuber2a03/umka.kak
 [submodule "forth.kak"]
 	path = forth.kak
 	url = https://github.com/thacuber2a03/forth.kak
+[submodule "umka.kak"]
+	path = umka.kak
+	url = https://github.com/thacuber2a03/umka.kak
