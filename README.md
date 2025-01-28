@@ -6,6 +6,7 @@ a collection of [Kakoune](https://github.com/mawww/kakoune) syntax highlighters 
 
 - [FORTH](https://github.com/thacuber2a03/forth.kak)
 - [Umka](https://github.com/thacuber2a03/umka.kak)
+- [ABNF](./abnf.kak)
 
 ## installation
 
