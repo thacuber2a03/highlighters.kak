@@ -4,8 +4,8 @@ a collection of [Kakoune](https://github.com/mawww/kakoune) syntax highlighters 
 
 ## list of current languages
 
-- [FORTH](https://github.com/thacuber2a03/forth.kak)
-- [Umka](https://github.com/thacuber2a03/umka.kak)
+- [FORTH](./forth.kak)
+- [Umka](./umka.kak)
 - [ABNF](./abnf.kak)
 
 ## installation
