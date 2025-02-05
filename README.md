@@ -4,9 +4,10 @@ a collection of [Kakoune](https://github.com/mawww/kakoune) syntax highlighters 
 
 ## list of current languages
 
-- [FORTH](./forth.kak)
-- [Umka](./umka.kak)
-- [ABNF](./abnf.kak)
+- [FORTH](https://forth-standard.org)
+- [Umka](https://github.com/vtereshkov/umka-lang)
+- [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form)
+- [Nelua](https://nelua.io)
 
 ## installation
 

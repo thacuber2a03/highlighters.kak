@@ -1,5 +1,3 @@
-# https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form
-
 provide-module abnf %{
     add-highlighter shared/abnf regions
     add-highlighter shared/abnf/ region ';' '$' fill comment
