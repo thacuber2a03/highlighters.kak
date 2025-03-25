@@ -27,7 +27,7 @@ provide-module -override umka %§
 
 	add-highlighter shared/umka/code/ regex '^\h*(import)\h*"(?:.*/)?(.*)\.um"\h*$' 1:meta 2:module
 
-	add-highlighter shared/umka/code/ regex '\B\.[a-z_][\w_]*\b' 0:value
+	add-highlighter shared/umka/code/ regex '[^)\w\b]\.[a-z_][\w_]*\b' 0:value
 
 	add-highlighter shared/umka/code/ regex '\b(real(32)?|u?int(8|16|32)?)\b'    0:+b@type
 	add-highlighter shared/umka/code/ regex '\b(bool|char|str|void|fiber|any)\b' 0:+b@type
