@@ -1,8 +1,11 @@
 # TODO:
 # - W in @\W is bold (assumed to be influenced by constant W)
 #   - hackily fixed, still an issue though
-# - implement full-name functions and &-functions
+# - add all full-name functions and &-functions
 #   - on it
+
+# possible extra additions (they're not highlighted on the pad, so I'm not sure)
+# - character escapes (\\delta, \\omega, \\<hexnum>)
 
 provide-module uiua %{
 	set-face global UiuaMonadicFunction function
