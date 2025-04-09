@@ -8,6 +8,7 @@ a collection of [Kakoune](https://github.com/mawww/kakoune) syntax highlighters 
 - [Umka](https://github.com/vtereshkov/umka-lang)
 - [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form)
 - [Nelua](https://nelua.io)
+- [Uiua](https://uiua.org)
 
 ## installation
 
