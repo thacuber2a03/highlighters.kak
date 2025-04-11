@@ -65,6 +65,7 @@ provide-module uiua %{
 	# numbers
 	add-highlighter shared/uiua/code/ regex '[`¯]?(?i)(?:[0-9]+(?:\.[0-9]+)?(?:e[-`¯]?[0-9]+)?)' 0:value # normal
 	add-highlighter shared/uiua/code/ regex '[`¯]?(?:\d+/[`¯]?\d+)'                              0:value # fractions
+	add-highlighter shared/uiua/code/ regex '(?<!\w)₋?[₁₂₃₄₅₆₇₈₉₀]+'                             0:value # subscript numbers
 
 	add-highlighter shared/uiua/code/ regex '[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?\h*(?=[=←↚])' 0:function  # function definition
 	add-highlighter shared/uiua/code/ regex '[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?[!‼]+'        0:UiuaMacro # macro
