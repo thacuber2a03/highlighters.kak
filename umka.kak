@@ -4,10 +4,6 @@ provide-module -override umka %§
 	add-highlighter shared/umka/ region '//'  '$'   fill comment
 	add-highlighter shared/umka/ region '/\*' '\*/' fill comment
 
-	add-highlighter shared/umka/import region 'import\h*\(\K' '\)' group
-	add-highlighter shared/umka/import/ regex '"(?:.*?/)*?([^/"]*?)\.um"' 0:string 1:module
-	add-highlighter shared/umka/import/ regex '(\w+)\h*=\h*(".+?(?<!\\)(?:\\\\)*")' 1:module 2:string
-
 	add-highlighter shared/umka/double_string region '"' '(?<!\\)(\\\\)*"' group
 	add-highlighter shared/umka/double_string/ fill string
 	add-highlighter shared/umka/double_string/ regex '\\([0abefnrtv\\]|x(?i)[\da-f]{2})' 0:value
