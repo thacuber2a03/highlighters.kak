@@ -95,7 +95,7 @@ provide-module nelua %§
 
 §
 
-hook global BufCreate .*\.nelua %{
+hook global BufCreate .+\.nelua %{
 	set-option buffer filetype nelua
 }
 

@@ -104,7 +104,7 @@ provide-module uiua %{
 	add-highlighter shared/uiua/code/ regex '(⊟)(₁)' 1:rgb:ffffff,rgb:3da542 2:rgb:000000,rgb:a7d379
 }
 
-hook global BufCreate .*\.ua %{ set-option buffer filetype uiua }
+hook global BufCreate .+\.ua %{ set-option buffer filetype uiua }
 
 hook global WinSetOption filetype=uiua %{
 	set-option buffer extra_word_chars '₋' '₁' '₂' '₃' '₄' '₅' '₆' '₇' '₈' '₉' '₀'

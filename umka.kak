@@ -58,7 +58,7 @@ provide-module -override umka %§
 		'selfhasptr' 'selftypeeq' 'typeptr' 'valid' 'validkey' 'keys' 'resume' 'memusage' 'exit'
 §
 
-hook global BufCreate (.*/)?.*\.um %{ set-option buffer filetype umka }
+hook global BufCreate .+\.um %{ set-option buffer filetype umka }
 
 hook global WinSetOption filetype=umka %{
 	require-module umka

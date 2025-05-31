@@ -19,7 +19,7 @@ provide-module abnf %{
     add-highlighter shared/abnf/grammar/ regex '%b[01]+(-[01]+|(\.[01]+)*)?' 0:value
 }
 
-hook global BufCreate .*\.abnf$ %{ set-option buffer filetype abnf }
+hook global BufCreate .+\.abnf$ %{ set-option buffer filetype abnf }
 
 hook global -group abnf-highlight WinSetOption filetype=abnf %{
     require-module abnf
