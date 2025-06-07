@@ -20,20 +20,20 @@ provide-module uiua %{
 
 	add-highlighter shared/uiua/ region '#' $ fill comment
 
-	add-highlighter shared/uiua/format-string region '\$"' (?<!\\)(\\\\)*" group
+	add-highlighter shared/uiua/format-string  region '\$"' (?<!\\)(\\\\)*" group
 	add-highlighter shared/uiua/format-string/ fill string
 	add-highlighter shared/uiua/format-string/ regex '_' 0:+r@value
 
-	add-highlighter shared/uiua/format-multistring region '\$\$ ' $ group
+	add-highlighter shared/uiua/format-multistring  region '\$\$ ' $ group
 	add-highlighter shared/uiua/format-multistring/ fill string
 	add-highlighter shared/uiua/format-multistring/ regex '_' 0:+r@value
 
 	add-highlighter shared/uiua/ region (?<![\$\\@])" (?<!\\)(\\\\)*" fill string
 	add-highlighter shared/uiua/ region '(?<!\$)\$ ' $ fill string
 
-	add-highlighter shared/uiua/inline-pos-macro region -recurse '\(' '\(\K' '\)!' group
-	add-highlighter shared/uiua/inline-pos-macro regex '(\(|\)!)' 0:UiuaMacro
-	add-highlighter shared/uiua/inline-pos-macro ref uiua
+	add-highlighter shared/uiua/inline-pos-macro  region -recurse '\(' '\(\K' '\)!' group
+	add-highlighter shared/uiua/inline-pos-macro/ regex '(\(|\)!)' 0:UiuaMacro
+	add-highlighter shared/uiua/inline-pos-macro/ ref uiua
 
 	add-highlighter shared/uiua/code default-region group
 
