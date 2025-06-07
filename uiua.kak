@@ -24,18 +24,22 @@ provide-module uiua %{
 	add-highlighter shared/uiua/format-string/ fill string
 	add-highlighter shared/uiua/format-string/ regex '_' 0:+r@value
 
-	add-highlighter shared/uiua/format-multistring region '\$\$' $ group
+	add-highlighter shared/uiua/format-multistring region '\$\$ ' $ group
 	add-highlighter shared/uiua/format-multistring/ fill string
 	add-highlighter shared/uiua/format-multistring/ regex '_' 0:+r@value
 
 	add-highlighter shared/uiua/ region (?<![\$\\@])" (?<!\\)(\\\\)*" fill string
-	add-highlighter shared/uiua/ region (?<!\$)\$ $ fill string
+	add-highlighter shared/uiua/ region '(?<!\$)\$ ' $ fill string
+
+	add-highlighter shared/uiua/inline-pos-macro region -recurse '\(' '\(\K' '\)!' group
+	add-highlighter shared/uiua/inline-pos-macro regex '(\(|\)!)' 0:UiuaMacro
+	add-highlighter shared/uiua/inline-pos-macro ref uiua
 
 	add-highlighter shared/uiua/code default-region group
 
 	add-highlighter shared/uiua/code/ regex '[\.:◌∘¬±¯⌵√∿⌊⌈⁅⧻△⇡⊢⊣⇌♭¤⋯⍉⍆⍏⍖⊚⊛◴◰□⋕]'     0:UiuaMonadicFunction
 	add-highlighter shared/uiua/code/ regex '[=≠<≤>≥\+-×\*÷%◿ⁿₙ↧↥∠ℂ≍⊟⊂⊏⊡↯↙↘↻⤸▽⌕⦷∊⊗⍤]' 0:UiuaDyadicFunction
-	add-highlighter shared/uiua/code/ regex '[/∧\\∵≡⍚⊞⧅⧈⍥⊕⊜◇⋅⊙⟜⊸⤙⤚◡◠˙˜∩⌅°⌝]'          0:UiuaMonadicModifier
+	add-highlighter shared/uiua/code/ regex '[/∧\\≡⍚⊞⧅⧈⍥⊕⊜◇⋅⊙⟜⊸⤙⤚◡◠˙˜∩⌅°⌝]'           0:UiuaMonadicModifier
 	add-highlighter shared/uiua/code/ regex '[⍜⊃⊓⍢⬚⨬⍣⍩∂∫]'                            0:UiuaDyadicModifier
 	add-highlighter shared/uiua/code/ regex '[⚂]'                                     0:UiuaNoadicFunction
 	add-highlighter shared/uiua/code/ regex '[ηπτ∞]'                                  0:value
@@ -63,14 +67,18 @@ provide-module uiua %{
 	add-highlighter shared/uiua/code/ regex '\b(A₁|A₂|A₃|C₂|C₃|E₃)(?![₋₁₂₃₄₅₆₇₈₉₀])'                                                       0:builtin
 
 	# numbers
-	add-highlighter shared/uiua/code/ regex '[`¯]?(?i)(?:[0-9]+(?:\.[0-9]+)?(?:e[-`¯]?[0-9]+)?)' 0:value # normal
-	add-highlighter shared/uiua/code/ regex '[`¯]?(?:\d+/[`¯]?\d+)'                              0:value # fractions
-	add-highlighter shared/uiua/code/ regex '(?<!\w)₋?[₁₂₃₄₅₆₇₈₉₀]+'                             0:value # subscript numbers
+	add-highlighter shared/uiua/code/ regex '[`¯]?(?i)[0-9]+(?:\.[0-9]+)?(?:e[-`¯]?[0-9]+)?' 0:value                     # normal
+	add-highlighter shared/uiua/code/ regex '[`¯]?(\d+[ηπτ]?|[ηπτ])/[`¯]?(\d+[ηπτ]?|[ηπτ])'  0:value                     # fractions
+	add-highlighter shared/uiua/code/ regex '(?<!\w)(₋?[₁₂₃₄₅₆₇₈₉₀]+)([⌞⌟])([₁₂₃₄₅₆₇₈₉₀]+)'  1:value 2:attribute 3:value # subscript numbers
+	add-highlighter shared/uiua/code/ regex '[⌞⌟]'                                           0:attribute                 # side subscripts
+
+	add-highlighter shared/uiua/code/ regex '\$[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?' 0:meta # label
 
 	add-highlighter shared/uiua/code/ regex '[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?\h*(?=[=←↚])' 0:function  # function definition
 	add-highlighter shared/uiua/code/ regex '[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?[!‼]+'        0:UiuaMacro # macro
 
-	add-highlighter shared/uiua/code/ regex '\b([dg]+)([ip])\b' 1:UiuaMonadicModifier 2:UiuaMonadicFunction
+	# planet notation shorthand
+	add-highlighter shared/uiua/code/ regex '\b(?:(f))?([dg]+)([ipf])\b' 1:UiuaDyadicModifier 2:UiuaMonadicModifier 3:UiuaMonadicFunction
 
 	add-highlighter shared/uiua/code/ regex '(?<!_)_(?!_)'                                          0:operator # strand notation
 	add-highlighter shared/uiua/code/ regex '([A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?)?\h*~' 0:module   # module operator
@@ -79,6 +87,8 @@ provide-module uiua %{
 
 	add-highlighter shared/uiua/code/ regex '┌─╴[A-Z][A-Za-z0-9]*' 0:module
 	add-highlighter shared/uiua/code/ regex '└─╴'                  0:module
+
+	add-highlighter shared/uiua/code/ regex '\^!' 0:UiuaMacro
 
 	# colors
 	add-highlighter shared/uiua/code/ regex '\b(?:(White)|(Black)|(Red)|(Orange)|(Yellow)|(Green)|(Cyan)|(Blue)|(Purple)|(Magenta))\b' \
@@ -107,7 +117,7 @@ provide-module uiua %{
 hook global BufCreate .+\.ua %{ set-option buffer filetype uiua }
 
 hook global WinSetOption filetype=uiua %{
-	set-option buffer extra_word_chars '₋' '₁' '₂' '₃' '₄' '₅' '₆' '₇' '₈' '₉' '₀'
+	set-option buffer extra_word_chars '₋' '₁' '₂' '₃' '₄' '₅' '₆' '₇' '₈' '₉' '₀' '⌞' '⌟'
 }
 
 hook -group uiua-highlight global WinSetOption filetype=uiua %{
