@@ -3,6 +3,7 @@
 #   - hackily fixed, still an issue though
 # - add all full-name functions and &-functions
 #   - on it
+#     - on it???
 
 # possible extra additions (they're not highlighted on the pad, so I'm not sure)
 # - character escapes (\\delta, \\omega, \\<hexnum>)
@@ -31,9 +32,10 @@ provide-module uiua %{
 	add-highlighter shared/uiua/ region (?<![\$\\@])" (?<!\\)(\\\\)*" fill string
 	add-highlighter shared/uiua/ region '(?<!\$)\$ ' $ fill string
 
-	add-highlighter shared/uiua/inline-pos-macro  region -recurse '\(' '\(\K' '\)!' group
-	add-highlighter shared/uiua/inline-pos-macro/ regex '(\(|\)!)' 0:UiuaMacro
-	add-highlighter shared/uiua/inline-pos-macro/ ref uiua
+	# TODO: figure out a way to make this work (it will never work)
+	# add-highlighter shared/uiua/inline-pos-macro  region -recurse '\(' '\(\K' '\)!' group
+	# add-highlighter shared/uiua/inline-pos-macro/ regex '(\(|\)!)' 0:UiuaMacro
+	# add-highlighter shared/uiua/inline-pos-macro/ ref uiua
 
 	add-highlighter shared/uiua/code default-region group
 
@@ -67,10 +69,10 @@ provide-module uiua %{
 	add-highlighter shared/uiua/code/ regex '\b(A₁|A₂|A₃|C₂|C₃|E₃)(?![₋₁₂₃₄₅₆₇₈₉₀])'                                                       0:builtin
 
 	# numbers
-	add-highlighter shared/uiua/code/ regex '[`¯]?(?i)[0-9]+(?:\.[0-9]+)?(?:e[-`¯]?[0-9]+)?' 0:value                     # normal
-	add-highlighter shared/uiua/code/ regex '[`¯]?(\d+[ηπτ]?|[ηπτ])/[`¯]?(\d+[ηπτ]?|[ηπτ])'  0:value                     # fractions
-	add-highlighter shared/uiua/code/ regex '(?<!\w)(₋?[₁₂₃₄₅₆₇₈₉₀]+)([⌞⌟])([₁₂₃₄₅₆₇₈₉₀]+)'  1:value 2:attribute 3:value # subscript numbers
-	add-highlighter shared/uiua/code/ regex '[⌞⌟]'                                           0:attribute                 # side subscripts
+	add-highlighter shared/uiua/code/ regex '[`¯]?(?i)[0-9]+(?:\.[0-9]+)?(?:e[-`¯]?[0-9]+)?'    0:value                     # normal
+	add-highlighter shared/uiua/code/ regex '[`¯]?(?:\d+[ηπτ]?|[ηπτ])/[`¯]?(?:\d+[ηπτ]?|[ηπτ])' 0:value                     # fractions
+	add-highlighter shared/uiua/code/ regex '(?<!\w)(₋?[₁₂₃₄₅₆₇₈₉₀]+)([⌞⌟])([₁₂₃₄₅₆₇₈₉₀]+)'     1:value 2:attribute 3:value # subscript numbers
+	add-highlighter shared/uiua/code/ regex '[⌞⌟]'                                              0:attribute                 # side subscripts
 
 	add-highlighter shared/uiua/code/ regex '\$[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?' 0:meta # label
 
