@@ -37,12 +37,12 @@ provide-module uiua %{
 
 	add-highlighter shared/uiua/code default-region group
 
-	add-highlighter shared/uiua/code/ regex '[\.:◌∘¬±¯⌵√∿⌊⌈⁅⧻△⇡⊢⊣⇌♭¤⋯⍉⍆⍏⍖⊚⊛◴◰□⋕]'     0:UiuaMonadicFunction
-	add-highlighter shared/uiua/code/ regex '[=≠<≤>≥\+-×\*÷%◿ⁿₙ↧↥∠ℂ≍⊟⊂⊏⊡↯↙↘↻⤸▽⌕⦷∊⊗⍤]' 0:UiuaDyadicFunction
-	add-highlighter shared/uiua/code/ regex '[/∧\\≡⍚⊞⧅⧈⍥⊕⊜◇⋅⊙⟜⊸⤙⤚◡◠˙˜∩⌅°⌝]'           0:UiuaMonadicModifier
-	add-highlighter shared/uiua/code/ regex '[⍜⊃⊓⍢⬚⨬⍣⍩∂∫]'                            0:UiuaDyadicModifier
-	add-highlighter shared/uiua/code/ regex '[⚂]'                                     0:UiuaNoadicFunction
-	add-highlighter shared/uiua/code/ regex '[ηπτ∞]'                                  0:value
+	add-highlighter shared/uiua/code/ regex '\.|:|◌|∘|¬|±|¯|⌵|√|∿|⌊|⌈|⁅|⧻|△|⇡|⊢|⊣|⇌|♭|¤|⋯|⍉|⍆|⍏|⍖|⊚|⊛|◴|◰|□|⋕'        0:UiuaMonadicFunction
+	add-highlighter shared/uiua/code/ regex '=|≠|<|≤|>|≥|\+|-|×|\*|÷|%|◿|ⁿ|ₙ|↧|↥|∠|ℂ|≍|⊟|⊂|⊏|⊡|↯|↙|↘|↻|⤸|▽|⌕|⦷|∊|⊗|⍤' 0:UiuaDyadicFunction
+	add-highlighter shared/uiua/code/ regex '/|∧|\\|≡|⍚|⊞|⧅|⧈|⍥|⊕|⊜|◇|⋅|⊙|⟜|⊸|⤙|⤚|◡|◠|˙|˜|∩|⌅|°|⌝'                    0:UiuaMonadicModifier
+	add-highlighter shared/uiua/code/ regex '⍜|⊃|⊓|⍢|⬚|⨬|⍣|⍩|∂|∫'                                                     0:UiuaDyadicModifier
+	add-highlighter shared/uiua/code/ regex '⚂'                                                                       0:UiuaNoadicFunction
+	add-highlighter shared/uiua/code/ regex 'η|π|τ|∞'                                                                 0:value
 
 	add-highlighter shared/uiua/code/ regex '\b(tag|now|timezone)\b'                                                        0:UiuaNoadicFunction
 	add-highlighter shared/uiua/code/ regex '\b(wait|recv|tryrecv|graphemes|json|csv|xlsx|binary|type|datetime|fft|repr)\b' 0:UiuaMonadicFunction
