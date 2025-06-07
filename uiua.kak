@@ -69,10 +69,10 @@ provide-module uiua %{
 	add-highlighter shared/uiua/code/ regex '\b(A₁|A₂|A₃|C₂|C₃|E₃)(?![₋₁₂₃₄₅₆₇₈₉₀])'                                                       0:builtin
 
 	# numbers
-	add-highlighter shared/uiua/code/ regex '[`¯]?(?i)[0-9]+(?:\.[0-9]+)?(?:e[-`¯]?[0-9]+)?'    0:value                     # normal
-	add-highlighter shared/uiua/code/ regex '[`¯]?(?:\d+[ηπτ]?|[ηπτ])/[`¯]?(?:\d+[ηπτ]?|[ηπτ])' 0:value                     # fractions
-	add-highlighter shared/uiua/code/ regex '(?<!\w)(₋?[₁₂₃₄₅₆₇₈₉₀]+)([⌞⌟])([₁₂₃₄₅₆₇₈₉₀]+)'     1:value 2:attribute 3:value # subscript numbers
-	add-highlighter shared/uiua/code/ regex '[⌞⌟]'                                              0:attribute                 # side subscripts
+	add-highlighter shared/uiua/code/ regex '[`¯]?(?i)[0-9]+(?:\.[0-9]+)?(?:e[-`¯]?[0-9]+)?'     0:value                     # normal
+	add-highlighter shared/uiua/code/ regex '[`¯]?(?:\d+[ηπτ]?|[ηπτ])/[`¯]?(?:\d+[ηπτ]?|[ηπτ])'  0:value                     # fractions
+	add-highlighter shared/uiua/code/ regex '(?<!\w)(₋?[₁₂₃₄₅₆₇₈₉₀]+)(?:([⌞⌟])([₁₂₃₄₅₆₇₈₉₀]+))?' 1:value 2:attribute 3:value # subscript numbers
+	add-highlighter shared/uiua/code/ regex '[⌞⌟]'                                               0:attribute                 # side subscripts
 
 	add-highlighter shared/uiua/code/ regex '\$[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?' 0:meta # label
 
