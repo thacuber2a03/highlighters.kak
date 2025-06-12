@@ -87,8 +87,8 @@ provide-module uiua %{
 
 	add-highlighter shared/uiua/code/ regex '@(?:(?i)\\u(?:\{[\da-f]+\}|[\da-f]{4})|\\x[\da-f]{2}|(?I)\\[nrt0sb\\"''_WZ]|( )|[^\h\\])' 0:value 1:+r
 
-	add-highlighter shared/uiua/code/ regex '┌─╴[A-Z][A-Za-z0-9]*' 0:module
-	add-highlighter shared/uiua/code/ regex '└─╴'                  0:module
+	add-highlighter shared/uiua/code/ regex '┌─╴(?i)[a-z0-9]*' 0:module
+	add-highlighter shared/uiua/code/ regex '└─╴'              0:module
 
 	add-highlighter shared/uiua/code/ regex '\^!' 0:UiuaMacro
 
