@@ -74,7 +74,7 @@ provide-module uiua %{
 	add-highlighter shared/uiua/code/ regex '(?<!\w)(₋?[₁₂₃₄₅₆₇₈₉₀]+)(?:([⌞⌟])([₁₂₃₄₅₆₇₈₉₀]+))?' 1:value 2:attribute 3:value # subscript numbers
 	add-highlighter shared/uiua/code/ regex '[⌞⌟]'                                               0:attribute                 # side subscripts
 
-	add-highlighter shared/uiua/code/ regex '\$[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?' 0:meta # label
+	add-highlighter shared/uiua/code/ regex '\$[A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?' 0:meta # label
 
 	add-highlighter shared/uiua/code/ regex '[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?\h*(?=[=←↚])' 0:function  # function definition
 	add-highlighter shared/uiua/code/ regex '[A-Z][A-Za-z0-9]*(?:__[`\d]+|₋?[₁₂₃₄₅₆₇₈₉₀]+)?[!‼]+'        0:UiuaMacro # macro
