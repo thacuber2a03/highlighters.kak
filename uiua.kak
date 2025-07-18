@@ -23,7 +23,7 @@ provide-module uiua %{
 
 	add-highlighter shared/uiua/format-string  region '\$"' (?<!\\)(\\\\)*" group
 	add-highlighter shared/uiua/format-string/ fill string
-	add-highlighter shared/uiua/format-string/ regex '_' 0:+r@value
+	add-highlighter shared/uiua/format-string/ regex '(?<!\\)_' 0:+r@value
 
 	add-highlighter shared/uiua/format-multistring  region '\$\$ ' $ group
 	add-highlighter shared/uiua/format-multistring/ fill string
