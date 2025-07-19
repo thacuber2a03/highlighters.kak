@@ -12,10 +12,16 @@ a collection of [Kakoune](https://github.com/mawww/kakoune) syntax highlighters 
 
 ## installation
 
-### with [plug.kak](https://github.com/andreyorst/plug.kak)
+### with [plug.kak](https://github.com/andreyorst/plug.kak) (unmaintained)
 
 ```kak
 plug 'thacuber2a03/highlighters.kak'
+```
+
+### with [kak-bundle](https://codeberg.org/jdugan6240/kak-bundle/)
+
+```kak
+bundle highlighters.kak 'https://github.com/thacuber2a03/highlighters.kak'
 ```
 
 ### manually
