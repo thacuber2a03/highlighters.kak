@@ -45,11 +45,11 @@ provide-module -override umka %§
 
 	add-highlighter shared/umka/code/ regex 'fn\h*\(.*?\)\h*(\|).*?(\|)' 1:attribute 2:attribute
 
-	add-highlighter shared/umka/code/ regex '\b(?i)-?[\d_]+\b'                  0:value
-	add-highlighter shared/umka/code/ regex '\b-?0x(?i)[\da-f]+\b'              0:value
-	add-highlighter shared/umka/code/ regex '\b(?i)-?[\d_]+\.[\d_]+\b'          0:value
-	add-highlighter shared/umka/code/ regex '\b(?i)-?[\d_]+\.[\d_]+e-?[\d_]+\b' 0:value
-	add-highlighter shared/umka/code/ regex '\b(?i)-?[\d_]+e-?[\d_]+\b'         0:value
+	add-highlighter shared/umka/code/ regex '\b-?\d(?:_?\d)*\b'                                0:value
+	add-highlighter shared/umka/code/ regex '\b-?\d(?:_?\d)*\.\d(?:_?\d)*\b'                   0:value
+	add-highlighter shared/umka/code/ regex '\b(?i)-?\d(?:_?\d)*\.\d(?:_?\d)*e-?\d(?:_?\d)*\b' 0:value
+	add-highlighter shared/umka/code/ regex '\b(?i)-?\d(?:_?\d)*e-?\d(?:_?\d)*\b'              0:value
+	add-highlighter shared/umka/code/ regex '\b-?0x(?i)[\da-f](?:_?[\da-f])*\b'                0:value
 
 	declare-option str-list umka_static_words                                                                                                \
 		'break' 'case' 'const' 'continue' 'default' 'else' 'enum' 'fn' 'for' 'import' 'interface' 'if' 'in' 'map' 'return' 'struct' 'switch' \
