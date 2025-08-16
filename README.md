@@ -7,8 +7,10 @@ a collection of [Kakoune](https://github.com/mawww/kakoune) syntax highlighters 
 - [FORTH](https://forth-standard.org)
 - [Umka](https://github.com/vtereshkov/umka-lang)
 - [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form)
+- [EBNF](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)
 - [Nelua](https://nelua.io)
 - [Uiua](https://uiua.org)
+- [Uxntal](https://wiki.xxiivv.com/site/uxntal.html)
 
 ## installation
 
@@ -26,4 +28,4 @@ bundle highlighters.kak 'https://github.com/thacuber2a03/highlighters.kak'
 
 ### manually
 
-clone this repository, or cherry pick the languages you want highlighters for, and place them in your autoload folder
+clone this repository, or cherry pick the languages you want highlighters for, and place them in your autoload folder or whatever system you use
