@@ -21,7 +21,7 @@ provide-module uiua %{
 
 	add-highlighter shared/uiua/comment  region '#' $ group
 	add-highlighter shared/uiua/comment/ fill comment
-	add-highlighter shared/uiua/comment/ regex '^# Experimental!$' 0:black,yellow
+	add-highlighter shared/uiua/comment/ regex '# Experimental!' 0:black,yellow
 
 	add-highlighter shared/uiua/format-string  region '\$"' (?<!\\)(\\\\)*" group
 	add-highlighter shared/uiua/format-string/ fill string
