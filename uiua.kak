@@ -25,7 +25,7 @@ provide-module uiua %{
 	add-highlighter shared/uiua/semantic-comment/ regex '^# Experimental!$'   0:black,yellow
 	add-highlighter shared/uiua/semantic-comment/ regex '^# No inline!'       0:black,cyan
 	add-highlighter shared/uiua/semantic-comment/ regex '^# Track caller!'    0:black,white
-	add-highlighter shared/uiua/semantic-comment/ regex '^# External!'        0:black,orange
+	add-highlighter shared/uiua/semantic-comment/ regex '^# External!'        0:black,bright-red
 	add-highlighter shared/uiua/semantic-comment/ regex '^# Deprecated!'      0:black,red
 	add-highlighter shared/uiua/semantic-comment/ regex '^(#)( )(B)(o)(o)(!)' \
 		1:black,white 2:white,black 3:black,white 4:white,black 5:black,white 6:white,black
