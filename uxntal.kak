@@ -31,7 +31,7 @@ provide-module uxntal %§
 	add-highlighter shared/uxntal/code/ regex '\bLIT[2r]{,2}\b' 0:keyword
 	add-highlighter shared/uxntal/code/ regex '\bBRK\b'         0:keyword
 
-	declare-option str-list uxntal_extra_word_chars '_' '-' '<' '>' '.' '@' '&' '/'
+	declare-option str-list uxntal_extra_word_chars '_' '-' '<' '>' '/'
 §
 
 hook global BufCreate .+\.tal %{ set-option buffer filetype uxntal }
