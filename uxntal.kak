@@ -30,6 +30,8 @@ provide-module uxntal %§
 
 	add-highlighter shared/uxntal/code/ regex '\bLIT[2r]{,2}\b' 0:keyword
 	add-highlighter shared/uxntal/code/ regex '\bBRK\b'         0:keyword
+
+	declare-option str uxntal_extra_word_chars '_' '-' '<' '>' '.' '@' '&' '/'
 §
 
 hook global BufCreate .+\.tal %{ set-option buffer filetype uxntal }
@@ -44,4 +46,5 @@ hook global -group uxntal-highlight WinSetOption filetype=uxntal %{
 
 hook global WinSetOption filetype=uxntal %{
 	require-module uxntal
+	set-option buffer extra_word_chars %opt{uxntal_extra_word_chars}
 }
