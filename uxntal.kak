@@ -13,7 +13,7 @@ provide-module uxntal %§
 	add-highlighter shared/uxntal/lambda/ regex '\}' 0:function
 	add-highlighter shared/uxntal/lambda/ ref uxntal/code
 
-	add-highlighter shared/uxntal/jump-lambda  region -recurse '\{' '[\?!]\{' '\}' group
+	add-highlighter shared/uxntal/jump-lambda  region -recurse '[\?!]?\{' '[\?!]\{' '\}' group
 	add-highlighter shared/uxntal/jump-lambda/ regex '[\?!]\{' 0:variable
 	add-highlighter shared/uxntal/jump-lambda/ regex '\}' 0:variable
 	add-highlighter shared/uxntal/jump-lambda/ ref uxntal/code
