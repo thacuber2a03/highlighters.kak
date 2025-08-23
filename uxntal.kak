@@ -5,9 +5,8 @@ provide-module uxntal %§
 
 	add-highlighter shared/uxntal/macro  region -recurse '\{' '%\S+\s*\{' '\}' group
 	add-highlighter shared/uxntal/macro/ regex '%\S+\s*\{' 0:meta
-	add-highlighter shared/uxntal/macro/ regex '%\S+\s*\{' 0:meta
 	add-highlighter shared/uxntal/macro/ regex '\}' 0:meta
-	add-highlighter shared/uxntal/macro/ ref uxntal/code
+	add-highlighter shared/uxntal/macro/ ref uxntal
 
 	add-highlighter shared/uxntal/lambda  region -recurse '\{' '\{' '\}' group
 	add-highlighter shared/uxntal/lambda/ regex '\{' 0:function
