@@ -8,12 +8,12 @@ provide-module uxntal %§
 	add-highlighter shared/uxntal/macro/ regex '\}' 0:meta
 	add-highlighter shared/uxntal/macro/ ref uxntal
 
-	add-highlighter shared/uxntal/lambda  region -recurse '\{' '\{' '\}' group
+	add-highlighter shared/uxntal/lambda  region -recurse '[\?!]?\{' '\{' '\}' group
 	add-highlighter shared/uxntal/lambda/ regex '\{' 0:function
 	add-highlighter shared/uxntal/lambda/ regex '\}' 0:function
 	add-highlighter shared/uxntal/lambda/ ref uxntal
 
-	add-highlighter shared/uxntal/jump-lambda  region -recurse '[\?!]\{' '[\?!]\{' '\}' group
+	add-highlighter shared/uxntal/jump-lambda  region -recurse '[\?!]?\{' '[\?!]\{' '\}' group
 	add-highlighter shared/uxntal/jump-lambda/ regex '[\?!]\{' 0:+u@variable
 	add-highlighter shared/uxntal/jump-lambda/ regex '\}'      0:+u@variable
 	add-highlighter shared/uxntal/jump-lambda/ ref uxntal
