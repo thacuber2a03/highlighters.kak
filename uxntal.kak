@@ -14,13 +14,13 @@ provide-module uxntal %§
 	add-highlighter shared/uxntal/code/ regex '(?I)\|[\da-f]+' 0:attribute
 	add-highlighter shared/uxntal/code/ regex '(?I)\$[\da-f]+' 0:meta
 
+	add-highlighter shared/uxntal/code/ regex '[\?!]\S+'  0:+u@variable
+	add-highlighter shared/uxntal/code/ regex '[\?!]&\S+' 0:+u@function
+
 	add-highlighter shared/uxntal/code/ regex '[,.;]\S+'        0:variable
 	add-highlighter shared/uxntal/code/ regex '(?<=\s)[-=_]\S+' 0:meta
 	add-highlighter shared/uxntal/code/ regex '@\S+'            0:module
 	add-highlighter shared/uxntal/code/ regex '&\S+'            0:function
-
-	add-highlighter shared/uxntal/code/ regex '[\?!]\S+'  0:+u@variable
-	add-highlighter shared/uxntal/code/ regex '[\?!]&\S+' 0:+u@function
 
 	add-highlighter shared/uxntal/code/ regex '"\S+' 0:string
 
