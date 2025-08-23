@@ -2,10 +2,16 @@ provide-module uxntal %§
 	add-highlighter shared/uxntal regions
 
 	add-highlighter shared/uxntal/comment region -recurse '\(' '(?<!")\(' '\)' fill comment
-	add-highlighter shared/uxntal/macro region '%\S+\s*\{' '\}' group
+
+	add-highlighter shared/uxntal/macro  region '%\S+\s*\{' '\}' group
 	add-highlighter shared/uxntal/macro/ regex '%\S+\s*\{' 0:meta
 	add-highlighter shared/uxntal/macro/ regex '\}' 0:meta
 	add-highlighter shared/uxntal/macro/ ref uxntal/code
+
+	add-highlighter shared/uxntal/lambda  region -recurse '\??\{' '\??\{' '\}' group
+	add-highlighter shared/uxntal/lambda/ ref uxntal/code
+	add-highlighter shared/uxntal/lambda/ regex '\A\{|\}\z'   0:function
+	add-highlighter shared/uxntal/lambda/ regex '\A\?\{|\}\z' 0:variable
 
 	add-highlighter shared/uxntal/code default-region group
 	add-highlighter shared/uxntal/code/ regex '(?I)(?<=\s)([\da-f]{2}|[\da-f]{4})(?=\s)'  0:meta
