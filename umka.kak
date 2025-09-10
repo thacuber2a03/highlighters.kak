@@ -27,7 +27,7 @@ provide-module -override umka %§
 	add-highlighter shared/umka/code/ regex '\b(new|make|copy|append|insert|delete|slice|sort|len|cap|sizeof|sizeofself|selfptr)\b' 0:builtin
 	add-highlighter shared/umka/code/ regex '\b(selfhasptr|selftypeeq|typeptr|valid|validkey|keys|resume|memusage|exit)\b' 0:builtin
 
-	add-highlighter shared/umka/code/ regex '(?<![\)\}\]\w\n])\h*\.[a-z_]\w*\b' 0:value
+	add-highlighter shared/umka/code/ regex '(?<![\)\}\]\w\n])\h*\K\.[a-z_]\w*\b' 0:value
 
 	add-highlighter shared/umka/code/ regex '\b(real(32)?|u?int(8|16|32)?)\b'    0:+b@type
 	add-highlighter shared/umka/code/ regex '\b(bool|char|str|void|fiber|any)\b' 0:+b@type
