@@ -1,6 +1,8 @@
 provide-module -override umka %§
 	add-highlighter shared/umka regions
 
+	add-highlighter shared/umka/multiline_str region '`' '`' fill string
+
 	add-highlighter shared/umka/ region '//'  '$'   fill comment
 	add-highlighter shared/umka/ region '/\*' '\*/' fill comment
 
@@ -11,8 +13,6 @@ provide-module -override umka %§
 	add-highlighter shared/umka/single_string region "'" "(?<!\\)(\\\\)*'" group
 	add-highlighter shared/umka/single_string/ fill value
 	add-highlighter shared/umka/single_string/ regex '\\([0abefnrtv\\]|x(?i)[\da-f]{2})' 0:meta
-
-	add-highlighter shared/umka/multiline_str region ` ` fill string
 
 	add-highlighter shared/umka/code default-region group
 
