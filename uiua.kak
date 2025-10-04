@@ -50,7 +50,7 @@ provide-module uiua %{
 
 	add-highlighter shared/uiua/code default-region group
 
-	add-highlighter shared/uiua/code/ regex '[\.:◌∘¬±¯⌵√∿⌊⌈⁅⧻△⇡⊢⊣⇌♭¤⋯⍉⍆⍏⍖⊚⊛◴◰□⋕]'     0:UiuaMonadicFunction
+	add-highlighter shared/uiua/code/ regex '[\.:◌∘¬±¯⌵√∿⌊⌈⁅⧻△⇡⊢⊣⇌♭¤⋯⍉⍆⍏⍖⊚⊛◴□⋕⧆]'     0:UiuaMonadicFunction
 	add-highlighter shared/uiua/code/ regex '[=≠<≤>≥\+-×\*÷%◿ⁿₙ↧↥∠ℂ≍⊟⊂⊏⊡↯↙↘↻⤸▽⌕⦷∊⊗⍤]' 0:UiuaDyadicFunction
 	add-highlighter shared/uiua/code/ regex '[/∧\\≡⍚⊞⧅⧈⍥⊕⊜◇⋅⊙⟜⊸⤙⤚◡◠˙˜∩⌅°⌝]'           0:UiuaMonadicModifier
 	add-highlighter shared/uiua/code/ regex '[⍜⊃⊓⍢⬚⨬⍣⍩∂∫]'                            0:UiuaDyadicModifier
@@ -130,7 +130,7 @@ provide-module uiua %{
 hook global BufCreate .+\.ua %{ set-option buffer filetype uiua }
 
 hook global WinSetOption filetype=uiua %{
-	set-option buffer extra_word_chars '₋' '₁' '₂' '₃' '₄' '₅' '₆' '₇' '₈' '₉' '₀' '⌞' '⌟'
+	set-option buffer extra_word_chars '''' '′' '″' '‴' '₋' '₁' '₂' '₃' '₄' '₅' '₆' '₇' '₈' '₉' '₀' '⌞' '⌟'
 }
 
 hook -group uiua-highlight global WinSetOption filetype=uiua %{
