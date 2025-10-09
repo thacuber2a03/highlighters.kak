@@ -48,10 +48,11 @@ provide-module -override forth %{
 		functions='ALLOT DECIMAL HEX PICK RP@ SP@ TYPE WORD COUNT FIND U\\. N\\. D\\. U\\.R \\.R REFILL SPACES SPACE
 		           EMIT KEY INTERPRET CR WITHIN'
 
-		operators='1\+ \+ 1- - \\* 2\\* 2/ / \\*/ R@ @ \+! -! ! 2@ 2R@ 2\+! 2-! 0= 0\< 0\> 0\<\> 0\< 0\>
-		           R\> \>R 2R\> 2\>R NEGATE INVERT /MOD \\*/MOD U/MOD UM/MOD MOD MAX MIN ABS S\>D DEFER! DEFER@ CELLS
-		           CELL\+ DROP DUP OVER SWAP 2DROP 2DUP 2OVER 2SWAP C@ C! C, , '\'' NIP OR AND XOR INVERT LSHIFT RSHIFT
-		           \> \< U\< \?DUP ROLL ROT'
+		# backslash hell
+		operators="1\\\\+ \\\\+ 1- - \\\\\\* 2\\\\\\* 2/ / \\\\\\*/ R@ @ \\\\+! -! ! 2@ 2R@ 2\\\\+! 2-! 0= 0\\< 0\\> 0\\<\\> 0\\< 0\\>
+		           R\\> \\>R 2R\\> 2\\>R NEGATE INVERT /MOD \\\\\\*/MOD U/MOD UM/MOD MOD MAX MIN ABS S\\>D DEFER! DEFER@ CELLS
+		           CELL\\\\+ DROP DUP OVER SWAP 2DROP 2DUP 2OVER 2SWAP C@ C! C, , \\' NIP OR AND XOR INVERT LSHIFT RSHIFT
+		           \\> \\< U\\< \\\\?DUP ROLL ROT"
 
 		attributes='IMMEDIATE'
 
