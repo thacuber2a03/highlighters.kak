@@ -7,6 +7,13 @@ provide-module nelua %§
 	add-highlighter shared/nelua/ region '##' $ fill meta
 	add-highlighter shared/nelua/ region '#[\[\|]' '[\]\|]#' fill meta
 
+	# currently copied from rc/filetype/lua.kak
+	add-highlighter shared/nelua/raw_string  region -match-capture   '\[(=*)\[' '\](=*)\]' fill string
+	add-highlighter shared/nelua/raw_comment region -match-capture '--\[(=*)\[' '\](=*)\]' fill comment
+	add-highlighter shared/nelua/double_string region '"'   (?<!\\)(?:\\\\)*" fill string
+	add-highlighter shared/nelua/single_string region "'"   (?<!\\)(?:\\\\)*' fill string
+	add-highlighter shared/nelua/comment       region '--'  $                 fill comment
+
 	add-highlighter shared/nelua/code default-region group
 
 	add-highlighter shared/nelua/code/ regex '(&|\||~|\$)' 0:operator
@@ -15,7 +22,7 @@ provide-module nelua %§
 	# but I don't know how and I'm concerned
 	# add-highlighter shared/nelua/code/ regex '\b([a-zA-Z_]\w*)\h*(?=")' 1:function
 
-	add-highlighter shared/nelua/code/ ref lua
+	add-highlighter shared/nelua/code/ ref lua/code
 
 	# this feels like a strange overload
 	add-highlighter shared/nelua/code/ regex '\b([0-9]+(:?\.[0-9])?(:?[eE]-?[0-9]+)?|0x[0-9a-fA-F]+)_(f(32|64|128)|[ui](s|8|16|32|64|128)|[iunb])\b' 0:value
