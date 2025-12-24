@@ -45,8 +45,6 @@ provide-module -override umka %§
 
 	add-highlighter shared/umka/code/ regex '([A-Za-z_]\w*)::[A-Za-z_]\w*' 1:module
 
-	add-highlighter shared/umka/code/ regex 'fn\h*\(.*?\)\h*(\|).*?(\|)' 1:attribute 2:attribute
-
 	add-highlighter shared/umka/code/ regex '\b-?\d(?:_?\d)*\b'                                0:value
 	add-highlighter shared/umka/code/ regex '\b-?\d(?:_?\d)*\.\d(?:_?\d)*\b'                   0:value
 	add-highlighter shared/umka/code/ regex '\b(?i)-?\d(?:_?\d)*\.\d(?:_?\d)*e-?\d(?:_?\d)*\b' 0:value
