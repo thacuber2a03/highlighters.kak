@@ -130,6 +130,8 @@ provide-module uiua %{
 hook global BufCreate .+\.ua %{ set-option buffer filetype uiua }
 
 hook global WinSetOption filetype=uiua %{
+	set-option buffer comment_line '#'
+
 	set-option buffer extra_word_chars '''' '′' '″' '‴' '₋' '₁' '₂' '₃' '₄' '₅' '₆' '₇' '₈' '₉' '₀' '⌞' '⌟'
 }
 

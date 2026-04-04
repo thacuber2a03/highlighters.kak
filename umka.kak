@@ -63,6 +63,10 @@ hook global BufCreate .+\.um %{ set-option buffer filetype umka }
 hook global WinSetOption filetype=umka %{
 	require-module umka
 
+	set-option buffer comment_line '//'
+	set-option buffer comment_block_begin '/*'
+	set-option buffer comment_block_end '*/'
+
 	set-option window static_words %opt{umka_static_words}
 
 	# cleanup trailing whitespaces when exiting insert mode

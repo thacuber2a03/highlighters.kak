@@ -123,5 +123,10 @@ hook -group forth-highlight global WinSetOption filetype=forth %{
 hook global WinSetOption filetype=forth %{
 	require-module forth
 
+	set-option buffer comment_line '\'
+	# the whitespaces around these are a bit awkward but oh well
+	set-option buffer comment_block_begin ' ( '
+	set-option buffer comment_block_end ' ) '
+
 	set-option window static_words %opt{forth_static_words}
 }

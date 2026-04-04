@@ -62,5 +62,9 @@ hook global -group uxntal-highlight WinSetOption filetype=uxntal %{
 
 hook global WinSetOption filetype=uxntal %{
 	require-module uxntal
+
+	set-option buffer comment_block_begin '('
+	set-option buffer comment_block_end ')'
+
 	set-option buffer extra_word_chars %opt{uxntal_extra_word_chars}
 }

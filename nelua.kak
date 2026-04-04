@@ -122,6 +122,10 @@ hook global WinSetOption filetype=nelua %{
 	hook window InsertChar \n -group nelua-indent nelua-indent-on-new-line
 	hook window InsertChar \n -group nelua-insert nelua-insert-on-new-line
 
+	set-option buffer comment_line '--'
+	set-option buffer comment_block_begin '--[['
+	set-option buffer comment_block_end ']]'
+
 	alias window alt nelua-alternative-file
 
 	hook -once -always window WinSetOption filetype=.* %{
