@@ -8,7 +8,7 @@ provide-module -override umka %§
 
 	add-highlighter shared/umka/double_string region '"' '(?<!\\)(\\\\)*"' group
 	add-highlighter shared/umka/double_string/ fill string
-	add-highlighter shared/umka/double_string/ regex '\\([0abefnrtv\\]|x(?i)[\da-f]{2})' 0:value
+	add-highlighter shared/umka/double_string/ regex '\\([0abefnrtv\\''"]|x(?i)[\da-f]{2})' 0:value
 
 	add-highlighter shared/umka/single_string region "'" "(?<!\\)(\\\\)*'" group
 	add-highlighter shared/umka/single_string/ fill value
