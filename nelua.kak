@@ -27,6 +27,7 @@ provide-module nelua %§
 	# this feels like a strange overload
 	add-highlighter shared/nelua/code/ regex '\b([0-9]+(:?\.[0-9])?(:?[eE]-?[0-9]+)?|0x[0-9a-fA-F]+)_(f(32|64|128)|[ui](s|8|16|32|64|128)|[iunb])\b' 0:value
 	add-highlighter shared/nelua/code/ regex '\b([0-9]+(:?\.[0-9])?(:?[eE]-?[0-9]+)?|0x[0-9a-fA-F]+)_(number|byte|[ui]size|float(32|64|128)|u?int(eger|8|16|32|64|128))\b' 0:value
+	add-highlighter shared/nelua/code/ regex '\b([0-9]+(:?\.[0-9])?(:?[eE]-?[0-9]+)?|0x[0-9a-fA-F]+)_c(u?short|u?int|u?long(long)?|ptrdiff|[su]?char|size|longdouble|string)\b' 0:value
 
 	add-highlighter shared/nelua/code/ regex '(@)[\*\[\]\d]*(\w+)' 1:operator 2:type
 
@@ -38,7 +39,7 @@ provide-module nelua %§
 	add-highlighter shared/nelua/code/ regex '\b0x[0-9a-fA-F]+\b' 0:value
 	add-highlighter shared/nelua/code/ regex '\.\.\.?' 0:operator
 
-	add-highlighter shared/nelua/code/ regex '\b(u?integer|number|byte|[iu]?(size|int(8|16|32|64|128)?)|string|boolean|pointer|void|(nil)?type|varargs|auto|facultative|span|record|enum|union)\b' 0:type
+	add-highlighter shared/nelua/code/ regex '\b(u?integer|float(32|64|128)|number|byte|[iu]size|u?int(8|16|32|64|128)?|string|boolean|pointer|void|(nil)?type|varargs|auto|facultative|span|record|enum|union)\b' 0:type
 	add-highlighter shared/nelua/code/ regex '\bc(u?short|u?int|u?long(long)?|ptrdiff|[su]?char|size|longdouble|string)\b' 0:type
 
 	define-command nelua-alternative-file -docstring 'Jump to the alternate file (implementation ↔ test)' lua-alternative-file
