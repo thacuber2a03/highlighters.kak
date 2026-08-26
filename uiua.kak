@@ -1,3 +1,9 @@
+# !!!!!!!! NOTICE !!!!!!!!
+#
+# this editor support file is out of date and should be considered
+# archived for the time being, or at least updated on-demand
+# (that is, ask me in issues and I'll update it)
+
 # TODO:
 # - W in @\W is bold (assumed to be influenced by constant W)
 #   - hackily fixed, still an issue though
