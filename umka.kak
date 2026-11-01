@@ -26,8 +26,8 @@ provide-module -override umka %§
 	add-highlighter shared/umka/code/ regex '\bimport\b' 0:meta
 
 	add-highlighter shared/umka/code/ regex '\b([fs]?(print|scan)f|round|trunc|ceil|floor|abs|fabs|sqrt|sin|cos|atan|atan2|exp|log)\b' 0:builtin
-	add-highlighter shared/umka/code/ regex '\b(new|make|copy|append|insert|delete|slice|sort|len|cap|sizeof|sizeofself|selfptr)\b' 0:builtin
-	add-highlighter shared/umka/code/ regex '\b(selfhasptr|selftypeeq|typeptr|valid|validkey|keys|resume|memusage|exit)\b' 0:builtin
+	add-highlighter shared/umka/code/ regex '\b(new|make|copy|append|insert|delete|slice|sort|len|cap|sizeof)\b' 0:builtin
+	add-highlighter shared/umka/code/ regex '\b(typeptr|valid|validkey|keys|resume|memusage|exit)\b' 0:builtin
 
 	add-highlighter shared/umka/code/ regex '(?<![\)\}\]\w\n])\h*\K\.[a-z_]\w*\b' 0:value
 
@@ -51,11 +51,11 @@ provide-module -override umka %§
 	add-highlighter shared/umka/code/ regex '\b(?i)\d(?:_?\d)*e-?\d(?:_?\d)*\b'              0:value
 	add-highlighter shared/umka/code/ regex '\b0x(?i)[\da-f](?:_?[\da-f])*\b'                0:value
 
-	declare-option str-list umka_static_words                                                                                                \
-		'break' 'case' 'const' 'continue' 'default' 'else' 'enum' 'fn' 'for' 'import' 'interface' 'if' 'in' 'map' 'return' 'struct' 'switch' \
-		'type' 'var' 'weak' 'printf' 'scanf' 'fprintf' 'fscanf' 'sprintf' 'sscanf' 'round' 'trunc' 'ceil' 'floor' 'abs' 'fabs' 'sqrt' 'sin'  \
-		'cos' 'atan' 'atan2' 'exp' 'log' 'new' 'make' 'copy' 'append' 'insert' 'delete' 'slice' 'sort' 'len' 'cap' 'sizeof' 'sizeofself'     \
-		'selfptr' 'selfhasptr' 'selftypeeq' 'typeptr' 'valid' 'validkey' 'keys' 'resume' 'memusage' 'exit'
+	declare-option str-list umka_static_words                                                                                                 \
+		'break' 'case' 'const' 'continue' 'default' 'else' 'enum' 'fn' 'for' 'import' 'interface' 'if' 'in' 'map' 'return' 'struct' 'switch'  \
+		'type' 'var' 'weak' 'printf' 'scanf' 'fprintf' 'fscanf' 'sprintf' 'sscanf' 'round' 'trunc' 'ceil' 'floor' 'abs' 'fabs' 'sqrt' 'sin'   \
+		'cos' 'atan' 'atan2' 'exp' 'log' 'new' 'make' 'copy' 'append' 'insert' 'delete' 'slice' 'sort' 'len' 'cap' 'sizeof' 'typeptr' 'valid' \
+		'validkey' 'keys' 'resume' 'memusage' 'exit'
 §
 
 hook global BufCreate .+\.um %{ set-option buffer filetype umka }
